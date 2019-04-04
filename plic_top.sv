@@ -107,6 +107,34 @@ module plic_top #(
     .resp_o
   );
 
+`ifdef XLNX_ILA_PLIC   
+xlnx_ila_plic plic_ila (
+	.clk(clk_i),
+	.probe0(prio_i),
+	.probe1(prio_o),
+	.probe2(prio_we_o),
+	.probe3(ip),
+	.probe4(ie_i),
+	.probe5(ie_o),
+	.probe6(ie_we_o),
+	.probe7(threshold_q),
+	.probe8(threshold_o),
+	.probe9(threshold_we_o),
+	.probe10(claim_id),
+	.probe11(complete_id),
+	.probe12(complete_we),
+	.probe13(claim_re),
+	.probe14(req_i),
+	.probe15(resp_o),
+	.probe16(claim),
+	.probe17(complete),
+	.probe18(prio_q),
+	.probe19(ie_q),
+        .probe20(irq_sources_i),
+        .probe21(eip_targets_o)
+);
+`endif
+   
   assign prio_i[0] = '0;
 
   for (genvar i = 0; i < N_TARGET; i++) begin
