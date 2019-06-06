@@ -7,11 +7,13 @@ Privileges specification Section
 
 ## `reg_rv_plic.py`
 
-The tool is to create register hjson file given values of number of sources,
-number of targets, and max value of priority. By default `target` is **1** and
-`priority` is **7** (8 level of priorities supported)
+The tool is to create register hjson and top module `rv_plic.sv` files given
+values of number of sources, number of targets, and max value of priority. By
+default `target` is **1** and `priority` is **7** (8 level of priorities
+supported)
 
 To change the value and to re-create hjson,
 
     $ reg_rv_plic.py -s 64 -t 2 -p 15 rv_plic_reg.tpl.hjson > rv_plic_reg.hjson
+    $ reg_rv_plic.py -s 64 -t 2 -p 15 rv_plic.tpl.sv > ../rtl/rv_plic.sv
 
