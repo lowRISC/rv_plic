@@ -22,8 +22,8 @@ module rv_plic_target #(
   input [N_SOURCE-1:0] ip,
   input [N_SOURCE-1:0] ie,
 
-  input [PRIOW-1:0] prio [N_SOURCE],
-  input [PRIOW-1:0] threshold,
+  input [N_SOURCE-1:0][PRIOW-1:0] prio,
+  input [PRIOW-1:0]               threshold,
 
   output logic            irq,
   output logic [SRCW-1:0] irq_id
