@@ -1,3 +1,8 @@
+# Deprecated
+
+This repository has been archived. Please refer to the [OpenTitan
+PLIC](https://github.com/lowRISC/opentitan/tree/master/hw/ip/rv_plic) instead.
+
 # RISC-V Platform-Level Interrupt Controller
 
 RV_PLIC module is to manage multiple interrupt events generated from the
